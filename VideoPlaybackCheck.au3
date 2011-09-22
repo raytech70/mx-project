@@ -11,7 +11,6 @@ sleep(3000)
 
 ; Go to Next video and also get 3 PixelCheckSum into Memory
 $GetNextArray = _GetNextVideoPixel("CyberLink PowerDVD 11")
-_ArrayDisplay($GetNextArray)
 msgBox(0, "Action", "Click Previous button")
 sleep(3000)
 
@@ -146,7 +145,6 @@ EndFunc
 ; if does not match, it's not Next video
 ;====================================================================================
 Func _CheckVideoNext($appTitle, $sArray)
-	_ArrayDisplay($sArray)
 	WinActivate($appTitle)
 	$appPos = WinGetPos ($appTitle, "")
 	$appLoc = ControlGetPos($appTitle, "", "") ; $pos[2] : Width  ; $pos[3] : Height
@@ -209,7 +207,7 @@ Func _ShowCheckScope($appTitle)
 	$appCheckScopeX = $appPos[0] + ($appLoc[2] / 2)
 	$appCheckScopeY = $appPos[1] + ($apploc[3] / 2)
 
-	DrawRectangle($appCheckScopeX, $appCheckScopeY, $appCheckScopeX + 10, $appCheckScopeY + 10, 0x111111)
+	DrawRectangle($appCheckScopeX, $appCheckScopeY, $appCheckScopeX + 10, $appCheckScopeY + 10, 0x0000FF)
 EndFunc
 
 Func DrawRectangle($xstart, $ystart, $xend, $yend, $color)
